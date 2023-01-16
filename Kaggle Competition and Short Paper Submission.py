@@ -408,7 +408,7 @@ parameters_gb = {
     'estimators__lgbm__feature_fraction': [0.4, 0.6],
 }
 
-est_xgb = XGBClassifier()
+
 est_lgbm = LGBMClassifier()
 
 estimators_st = [
@@ -427,11 +427,3 @@ full_pipeline_gs = GridSearchCV(estimator=Pipeline([
 ]),  param_grid=parameters_gb)
 
 print(full_pipeline_gs.estimator.get_params().keys())
-
-print(" Results from Grid Search ")
-print("\n The best estimator across ALL searched params:\n",
-      full_pipeline_gs.best_estimator_)
-print("\n The best score across ALL searched params:\n",
-      full_pipeline_gs.best_score_)
-print("\n The best parameters across ALL searched params:\n",
-      full_pipeline_gs.best_params_)
